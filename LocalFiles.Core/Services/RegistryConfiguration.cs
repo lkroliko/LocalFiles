@@ -1,11 +1,8 @@
 ﻿using LocalFiles.Core.Enums;
 using LocalFiles.Core.Interfaces;
 using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocalFiles.Core.Services
 {
@@ -18,7 +15,7 @@ namespace LocalFiles.Core.Services
 
         public List<string> AclExtensions { get; }
         public AclType AclExtensionsType { get; }
-        public List<string> AclPaths {get;}
+        public List<string> AclPaths { get; }
 
         public RegistryConfiguration()
         {
@@ -30,20 +27,30 @@ namespace LocalFiles.Core.Services
 
         private List<string> GetAcl(string keyName)
         {
-            var regKey = Registry.LocalMachine.OpenSubKey(_rootKey);
-            object value = regKey.GetValue(keyName);
-            if (value == null)
+            try
+            {
+                var regKey = Registry.LocalMachine.OpenSubKey(_rootKey);
+                object value = regKey.GetValue(keyName);
+                return (value as string).Split(';').ToList();
+            }
+            catch
+            {
                 return new List<string>();
-            return (value as string).Split(';').ToList();
+            }
         }
 
         private AclType GetAclType()
         {
-            var key = Registry.LocalMachine.OpenSubKey(_rootKey);
-            object value = key.GetValue(_aclTypeKey);
-            if (value != null)
+            try
+            {
+                var key = Registry.LocalMachine.OpenSubKey(_rootKey);
+                object value = key.GetValue(_aclTypeKey);
                 return (AclType)int.Parse((value as string));
-            return AclType.Permit;
+            }
+            catch
+            {
+                return AclType.Permit;
+            }
         }
     }
 }

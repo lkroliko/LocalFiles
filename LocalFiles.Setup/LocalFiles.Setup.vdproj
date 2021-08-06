@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_3DE7134C22425AAEB9F51A383739AB9B"
+        "MsmKey" = "8:_6F8FFCDA20F1B8A802A719A25C218A39"
         "OwnerKey" = "8:_E18313A1417B49EB957AC32E68D9B126"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3DE7134C22425AAEB9F51A383739AB9B"
+        "OwnerKey" = "8:_6F8FFCDA20F1B8A802A719A25C218A39"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,6 +106,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -136,14 +144,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3DE7134C22425AAEB9F51A383739AB9B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6F8FFCDA20F1B8A802A719A25C218A39"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:LocalFiles.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3DE7134C22425AAEB9F51A383739AB9B"
+                    "_6F8FFCDA20F1B8A802A719A25C218A39"
                     {
                     "Name" = "8:LocalFiles.Core.dll"
                     "Attributes" = "3:512"
@@ -254,15 +262,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LocalFiles"
-        "ProductCode" = "8:{A78F3489-DE3C-43E5-A89D-7557EE322329}"
-        "PackageCode" = "8:{03E10E1C-8924-475A-B202-ADEF800196BE}"
+        "ProductCode" = "8:{524C4AA8-05CE-48D5-A1F0-EEE3B3A6E5F6}"
+        "PackageCode" = "8:{2E9A18D4-2884-490C-AAFF-6462C4AE3A8E}"
         "UpgradeCode" = "8:{FB1312A5-C012-427D-84BC-90D49F748F10}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:Lukasz Krolikowski"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

@@ -1,8 +1,6 @@
 ﻿using LocalFiles.Core.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
+using System.IO;
 
 namespace LocalFiles.Core.Services
 {
@@ -17,8 +15,7 @@ namespace LocalFiles.Core.Services
 
         public void Run(string path)
         {
-            
-            if(_permissions.CanRun(path))
+            if (_permissions.CanRun(path) && File.Exists(path))
                 Process.Start(path);
         }
     }

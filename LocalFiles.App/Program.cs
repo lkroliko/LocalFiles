@@ -1,11 +1,5 @@
 ﻿using LocalFiles.Core.Builders;
-using LocalFiles.Core.Services;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LocalFiles.Core.Extensions;
 
 namespace LocalFiles.App
 {
@@ -16,7 +10,7 @@ namespace LocalFiles.App
             if (args.Length != 1)
                 return;
 
-            var path = Uri.UnescapeDataString(args[0].Replace("localfile://", ""));
+            var path = args[0].ToPath();
 
             RunnerBuilder.New.UseRegistryConfiguration().Build().Run(path);
         }
