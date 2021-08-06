@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     $("a").each(function (i, a) {
         if (a.href.match("^file://")) {
-            if (a.href[9] == ":") {
+            if (a.href[9] === ":") {
                 $(a).attr("href", a.href.replace("file://", "localfile:/"));
             } else {
                 $(a).attr("href", a.href.replace("file://", "localfile:////"));
