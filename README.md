@@ -11,17 +11,26 @@ Change links from "file" to "localfile" on web page.
 
 Jquery script:
 ```
-$(document).ready(function() {
-  $("a").each(function(i, a) {
-    if(a.href.match("^file://")){				
-      $(a).attr("href", a.href.replace("file://", "localfile:/"))
-      }
+$(document).ready(function () {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0)
+        return
+
+    $("a").each(function (i, a) {
+        if (a.href.match("^file://")) {
+            if (a.href[9] == ":") {
+                $(a).attr("href", a.href.replace("file://", "localfile:/"))
+            } else {
+                $(a).attr("href", a.href.replace("file://", "localfile:////"))
+            }
+        }
     })
-}); 
+});
 ```
 
 ## Deployement
-Install msi program via GPO
+Install msi program via GPO. If previous version is installed remove it before install newer.
 
 ## Configuration
 Configure using registry key HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\LocalFiles  
