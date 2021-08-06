@@ -15,14 +15,14 @@ $(document).ready(function () {
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf('MSIE ');
     if (msie > 0)
-        return
+        return;
 
     $("a").each(function (i, a) {
         if (a.href.match("^file://")) {
             if (a.href[9] == ":") {
-                $(a).attr("href", a.href.replace("file://", "localfile:/"))
+                $(a).attr("href", a.href.replace("file://", "localfile:/"));
             } else {
-                $(a).attr("href", a.href.replace("file://", "localfile:////"))
+                $(a).attr("href", a.href.replace("file://", "localfile:////"));
             }
         }
     })
